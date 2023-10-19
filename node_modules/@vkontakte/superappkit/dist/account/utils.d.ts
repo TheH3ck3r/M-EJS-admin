@@ -1,0 +1,4 @@
+import { URLParams } from "../common/utils";
+import { AccountAction } from "./types";
+export declare function makeAccountActionString(accountAction?: AccountAction): string;
+export declare function makeOpenAccountUrl(params: URLParams): Promise<string>;

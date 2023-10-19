@@ -1,0 +1,4 @@
+export declare enum VerificationProfileEvents {
+    SUCCESS = "VKSDKVerificationProfileSuccess",
+    CLOSE = "VKSDKVerificationProfileClose"
+}

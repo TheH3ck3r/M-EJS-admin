@@ -1,0 +1,9 @@
+/**
+ * Модуль юзера
+ * ----------------------
+ *
+ * @module User
+ */
+export { User } from './user';
+export type { ValidationPhoneParams } from './types';
+export { UserEvents } from './events';

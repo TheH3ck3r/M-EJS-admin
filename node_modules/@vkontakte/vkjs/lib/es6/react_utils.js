@@ -1,0 +1,7 @@
+export function hasReactNode(value) {
+  return value !== undefined && value !== false && value !== null;
+}
+export function isPrimitiveReactNode(node) {
+  return typeof node === 'string' || typeof node === 'number';
+}
+//# sourceMappingURL=react_utils.js.map

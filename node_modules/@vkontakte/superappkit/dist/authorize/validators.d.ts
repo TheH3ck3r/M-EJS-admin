@@ -1,0 +1,6 @@
+import { Validator } from "../validator";
+interface AuthorizeScopeValidator {
+    scope: string;
+}
+export declare const authorizeScopeValidator: Validator<AuthorizeScopeValidator>;
+export {};

@@ -1,0 +1,11 @@
+export default class PendingTask<T = any> {
+    private resolveHandler;
+    private rejectHandler;
+    private promise;
+    finished: boolean;
+    active: boolean;
+    start(): void;
+    get(): Promise<T>;
+    resolve: (data?: T | undefined) => any;
+    reject: (data?: T | undefined) => any;
+}

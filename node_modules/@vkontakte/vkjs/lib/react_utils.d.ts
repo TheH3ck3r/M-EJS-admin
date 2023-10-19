@@ -1,0 +1,3 @@
+import { ReactNode } from 'react';
+export declare function hasReactNode(value: ReactNode): boolean;
+export declare function isPrimitiveReactNode(node: ReactNode): boolean;

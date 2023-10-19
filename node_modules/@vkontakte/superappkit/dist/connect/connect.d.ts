@@ -1,0 +1,52 @@
+import mitt, { Emitter } from 'mitt';
+import { AuthButtonParams, AuthButtonType, AuthParams, ButtonOneTapAuthParams, FloatingOneTapAuthParams, RedirectAuthParams, VKAuthSuccessResult, VKDataPolicyResult, VKOneTapAuthButtonResult, VKOneTapAuthResult, VKUserVisibleAuthResult } from './types';
+export declare class Connect {
+    private static readonly flags;
+    static readonly events: Emitter;
+    private static readonly handleError;
+    /**
+     * Метод добавляет подписку на событие модуля.
+     */
+    static on(event: string, handler: mitt.Handler): void;
+    /**
+     * Метод удаляет подписку на событие модуля.
+     */
+    static off(event: string, handler: mitt.Handler): void;
+    /**
+     * Метод для тихой авторизации без показа UI.
+     */
+    static readonly silentAuth: () => Promise<VKAuthSuccessResult>;
+    /**
+     * @ignore
+     */
+    static readonly oneTapAuth: (oneTapAuthType: AuthButtonType, params: AuthButtonParams) => VKOneTapAuthResult | null;
+    /**
+     * Метод для отображения окна быстрой авторизации в правом
+     * верхнем углу экрана в виде фиксированного элемента.
+     */
+    static readonly floatingOneTapAuth: (params: FloatingOneTapAuthParams) => VKOneTapAuthResult | null;
+    /**
+     * Метод для создания окна с кнопкой быстрой авторизации, которое можно
+     * вставить в любое место разметки.
+     */
+    static readonly buttonOneTapAuth: (params: ButtonOneTapAuthParams) => VKOneTapAuthButtonResult | null;
+    private static readonly handleOneTapEvents;
+    /**
+     * Метод для отображения модального окна с политиками и
+     * передаваемыми данными.
+     */
+    static readonly userDataPolicy: (uuid: string, scheme?: string | undefined) => VKDataPolicyResult;
+    private static readonly userPolicyAgreements;
+    /**
+     * Метод для авторизации в отдельном окне.
+     */
+    static readonly userVisibleAuth: (params?: AuthParams | undefined) => Promise<VKUserVisibleAuthResult>;
+    /**
+     * Метод авторизации с помощью редиректа на страницу VK ID.
+     */
+    static readonly redirectAuth: (params: RedirectAuthParams) => void;
+    /**
+     * Метод для инвалидации токена, выданного на основе авторизации в VK ID
+     */
+    static readonly logout: () => Promise<Response>;
+}

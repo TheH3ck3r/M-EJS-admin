@@ -1,0 +1,10 @@
+/**
+ * Authorize
+ * ----------------------
+ * Модуль позволяет запустить новую авторизацию с подтверждением скопов
+ *
+ * @module Authorize
+ */
+export { Authorize } from './authorize';
+export type { AuthorizeConfig, AuthorizeInitConfig, AuthorizeParams } from './types';
+export { AuthorizeEvents } from './events';

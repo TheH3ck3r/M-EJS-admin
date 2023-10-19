@@ -1,0 +1,33 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  list-style: none;
+
+  &_item {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+}
+
+.exit {
+  width: 5.5em;
+  height: 2.5em;
+  padding-left: 3em;
+  padding-top: 0.5em;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+}

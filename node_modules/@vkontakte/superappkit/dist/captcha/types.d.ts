@@ -1,0 +1,14 @@
+/**
+ * @ignore
+ */
+export interface VKAuthCaptchaSetupData {
+    captcha_sid: string;
+    captcha_img: string;
+}
+/**
+ * @ignore
+ */
+export interface VKAuthCaptchaSuccessData {
+    captcha_sid: string;
+    captcha_key: string;
+}

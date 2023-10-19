@@ -1,0 +1,19 @@
+import { Validator } from "../validator";
+import { ConfigOptions, RequestSuperAppTokenParams } from "./types";
+interface AppIdValidator {
+    appId: number;
+}
+interface RequestSuperAppTokenHandlerValidator {
+    handler: (params: RequestSuperAppTokenParams, options?: ConfigOptions) => Promise<string> | void;
+}
+interface AuthHandlerValidator {
+    handler: (options?: ConfigOptions) => Promise<string> | void;
+}
+interface LogoutHandlerValidator {
+    handler: () => void;
+}
+export declare const requestSuperAppTokenHandlerValidator: Validator<RequestSuperAppTokenHandlerValidator>;
+export declare const authHandlerValidator: Validator<AuthHandlerValidator>;
+export declare const logoutHandlerValidator: Validator<LogoutHandlerValidator>;
+export declare const appIdValidator: Validator<AppIdValidator>;
+export {};

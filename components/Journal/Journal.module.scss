@@ -1,0 +1,8 @@
+.rotated {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.link {
+  color: var(--ep-text-color);
+}

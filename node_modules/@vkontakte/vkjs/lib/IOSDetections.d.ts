@@ -1,0 +1,20 @@
+export declare const IPHONE_SAFARI_BOTTOM_BAR = 45;
+export declare const IPHONE_X_SAFARI_BOTTOM_BAR = 85;
+export declare const IPHONE_KEYBOARD_REJECT_OFFSET = 180;
+export declare const IOS_NO_KEYBOARD_ALLOWED_OFFSET = 70;
+export declare function detectIOS(ua?: string): {
+    isIPad: boolean;
+    isIPhone: boolean;
+    isIOS: boolean;
+    isIPadOS: boolean;
+    iosMajor: number;
+    iosMinor: number;
+    isWKWebView: boolean;
+    isScrollBasedViewport: boolean;
+    isIPhoneX: boolean;
+    isIOSChrome: boolean;
+};
+declare const isIPad: boolean, isIPhone: boolean, isIOS: boolean, isIPadOS: boolean, iosMajor: number, iosMinor: number, isWKWebView: boolean, isScrollBasedViewport: boolean, isIPhoneX: boolean, isIOSChrome: boolean;
+export { isIPad, isIPhone, isIOS, isIPadOS, iosMajor, iosMinor, isWKWebView, isScrollBasedViewport, isIPhoneX, isIOSChrome, };
+export declare function isLandscapePhone(): boolean;
+export declare function checkIPadOS(ua: string): boolean;

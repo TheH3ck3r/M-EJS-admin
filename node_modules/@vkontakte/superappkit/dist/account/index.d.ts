@@ -1,0 +1,7 @@
+/**
+ * Модуль Account.
+ *
+ * @module Account
+ */
+export { Account } from './account';
+export type { OpenAccountAction, OpenAccountParams, AccountAction } from './types';

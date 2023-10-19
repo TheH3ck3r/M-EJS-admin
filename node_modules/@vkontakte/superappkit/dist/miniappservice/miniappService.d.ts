@@ -1,0 +1,34 @@
+import { MiniApp } from "../miniapp";
+import { MiniAppServiceOpenParams } from "./types";
+/**
+ * Перед началом нужно настроить `SDK` через библиотеку `Config`.
+ *
+ * Пример использования
+ * ```js
+ * const service = new MiniAppService();
+ * service.open({ app: 'xxx-xxx' });
+ *
+ * // ...
+ * // Закончили использование и закрываем все открытые миниаппы
+ * service.close();
+ * ```
+ */
+export declare class MiniAppService {
+    private readonly stack;
+    private removeMiniApp;
+    private makeHandleMiniAppClose;
+    private makeHandleMiniAppHide;
+    private handleMiniAppCreate;
+    /**
+     * Геттер возвращает длину текущего стека.
+     */
+    get length(): number;
+    /**
+     * Метод открывает мини-приложение, добавляет его в стек и сохраняет состояние скролла body, если стек до этого был пуст.
+     */
+    open(params: MiniAppServiceOpenParams): MiniApp;
+    /**
+     * Метод закрывает все мини-приложения в стеке, очищает его и восстанавливает состояние скролла body в исходное.
+     */
+    close(): void;
+}

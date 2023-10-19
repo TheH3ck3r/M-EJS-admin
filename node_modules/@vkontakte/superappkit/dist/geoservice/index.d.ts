@@ -1,0 +1,7 @@
+/**
+ * Модуль геосервиса.
+ *
+ * @module GeoService
+ */
+export { GeoService, GeoserviceEvents } from './geoservice';
+export type { DecodeCoordsParams, DecodeCoordsResponse, DirectionsParams, DirectionsResponse, EncodeCoordsParams, EncodeCoordsResponse, ISOParams, ISOResponse, RequestParams, CostingOptions, StaticMapRequestParams, EncodeCoordsResponseResult, AddressDetails, CoordsGeometry, GeoserviceConfig, } from './types';

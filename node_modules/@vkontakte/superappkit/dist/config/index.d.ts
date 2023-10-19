@@ -1,0 +1,10 @@
+/**
+ * Библиотека для настройки SDK.
+ * ------------------------
+ * Позволяет выставить общие настройки для всех библиотек SDK.
+ *
+ * @module Config
+ */
+export { Config } from './config';
+export type { RequestSuperAppTokenHandler, RequestSuperAppTokenParams, AuthHandler, LogoutHandler, ConfigStore, ConfigOptions, } from './types';
+export type { AppSettings as ConfigAppSettings } from "../common/utils";

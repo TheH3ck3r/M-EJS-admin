@@ -1,0 +1,11 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.rotated {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}

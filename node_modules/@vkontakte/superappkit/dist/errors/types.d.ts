@@ -1,0 +1,6 @@
+export declare type SDKError = {
+    type: string;
+    code: number;
+    message: string;
+    params?: any;
+};

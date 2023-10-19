@@ -1,0 +1,69 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  max-width: 256px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ep-box-background-color);
+  position: relative;
+}
+
+.upper {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.middle {
+  margin: 1em;
+}
+
+.lower {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.storageJournal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.storageCertificateRoot {
+  display: flex;
+  flex-direction: column;
+  // width: clamp(256px, 100%, 512px);
+  max-width: 512px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ep-box-background-color);
+  position: relative;
+}
+
+.storageCertificateUpper {
+  margin-left: 2em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.storageCertificateMiddle {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+  gap: 0.5em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}

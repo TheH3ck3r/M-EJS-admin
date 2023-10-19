@@ -1,0 +1,11 @@
+/**
+ * Модуль авторизации через qr
+ * ----------------------
+ * Позволяет отображать qr-код для авторизации.
+ *
+ * @module AuthQR
+ */
+export { AuthQR } from './authQR';
+export type { AuthQRParams } from './types';
+export { AuthQREvents } from './events';
+export type { BridgeMessage as AuthQRMessage } from "../common/bridge";

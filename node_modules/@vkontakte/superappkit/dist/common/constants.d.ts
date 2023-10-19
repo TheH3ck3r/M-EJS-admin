@@ -1,0 +1,23 @@
+export declare const VERSION: string;
+export declare const PRODUCTION: any;
+export declare const DOMAIN: any;
+export declare const LOGIN_DOMAIN: string;
+export declare const OAUTH_DOMAIN: string;
+export declare const CONNECT_DOMAIN: string;
+export declare const ALLOWED_DOMAINS: string[];
+export declare const DEFAULT_DOMAIN = "vk.com";
+export declare const DOMAIN_FILE_URL = "https://vk.ru/domain.txt";
+export declare const VKPAY_APP_ID = 6217559;
+export declare const SMALL_TABLET_SIZE = 768;
+export declare const ALLOWED_APP_SETTINGS_KEYS: string[];
+export declare const LANGUAGES: {
+    RUS: number;
+    UKR: number;
+    ENG: number;
+    SPA: number;
+    GERMAN: number;
+    POL: number;
+    FRA: number;
+    TURKEY: number;
+};
+export declare const MODAL_IFRAME_Z_INDEX = 999999;

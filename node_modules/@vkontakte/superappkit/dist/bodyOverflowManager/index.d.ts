@@ -1,0 +1,18 @@
+/**
+ * Запоминает исходное, блокирует и восстанавливает состояние скролла body
+ */
+declare class BodyOverflowManager {
+    private savedStyles;
+    private bodyScrollYValue;
+    private isFreezed;
+    /**
+     * Сохраняем состояние скролла body, и скрываем его
+     */
+    freezeBodyOverflow(): void;
+    /**
+     * Возвращаем скролл body в исходное состояние
+     */
+    restoreBodyOverflow(): void;
+}
+declare const _default: BodyOverflowManager;
+export default _default;

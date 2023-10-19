@@ -1,0 +1,10 @@
+export declare enum MessengerInternalEvents {
+    INTERNAL_RESIZE = "VKSDKMessengerInternalResize",
+    INTERNAL_LOGOUT = "VKSDKMessengerInternalLogout"
+}
+export declare enum MessengerEvents {
+    /**
+     * Событие закрытия чата. Вызывается, когда пользователь нажал на крестик открытого чата.
+     */
+    CLOSE_CHAT = "VKSDKMessengerCloseChat"
+}

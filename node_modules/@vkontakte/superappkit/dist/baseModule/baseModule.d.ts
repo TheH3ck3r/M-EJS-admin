@@ -1,0 +1,70 @@
+import mitt, { Emitter } from 'mitt';
+import Bridge, { BridgeMessage } from "../common/bridge";
+import PendingTask from "../common/pendingTask";
+export declare class BaseModule<InitConfig, Config, Params> {
+    protected config: Config;
+    protected params: Params;
+    protected bridge: Bridge<any>;
+    protected iframe: HTMLIFrameElement;
+    protected loadingTask: PendingTask;
+    protected initTask: PendingTask;
+    protected timeoutTimer: any;
+    protected readonly cssText: string;
+    protected readonly events: Emitter;
+    constructor();
+    /**
+     * Предзагрузка модуля. Будет создан скрытый айфрейм.
+     */
+    preload(params: Params): Promise<void>;
+    /**
+     * Метод показывает модуль. Автоматически вызовет preload, если это не было сделано в ручную.
+     */
+    open(params: Params): Promise<void>;
+    /**
+     * Обновление настроек модуля.
+     */
+    update(params?: Partial<Params>, config?: InitConfig): void;
+    /**
+     * Метод закрывает модуль, так же он будет удален со страницы.
+     */
+    close(): void;
+    /**
+     * Метод отправляет сообщение в айфрейм.
+     */
+    sendMessage(message: BridgeMessage<any>): void;
+    /**
+     * Метод добавляет подписку на событие модуля.
+     */
+    on(event: string, handler: mitt.Handler): void;
+    /**
+     * Метод удаляет подписку на событие модуля.
+     */
+    off(event: string, handler: mitt.Handler): void;
+    protected handleInit(): void;
+    /** Метод вызывается при запросе авторизации со стороны айфрейма */
+    protected handleRequestAuth(): void;
+    /** Метод вызывается при запросе superapp token со стороны айфрейма */
+    protected handleRequestSuperAppToken(params: any): void;
+    /** Метод вызывается при изменении superapp token в конфиге */
+    protected handleChangeSuperAppToken(token: string): void;
+    /** Метод вызывается при событии ошибки со стороны айфрейма */
+    protected handleError: (data: any) => void;
+    /** Метод вызывается при событии со стороны айфрейма */
+    protected handleBridgeMessage(data: BridgeMessage<any>): void;
+    /** Метод для вызова logout */
+    protected handleLogout(): void;
+    /** Метод вызывается после обновления параметров модуля */
+    protected handleAfterUpdateParams(): void;
+    /** Метод вызывается после обновления конфига модуля */
+    protected handleAfterUpdateConfig(): void;
+    /** Метод вызывается после создания айфрейма */
+    protected handleAfterCreateIframe(): void;
+    protected validateParams(params: Params): Promise<Params>;
+    protected createIframe(): Promise<void>;
+    protected getIframeUrl(): Promise<string>;
+    protected getIframeContainer(): HTMLElement;
+    protected getIframeUrlParams(): Promise<string>;
+    protected updateConfig(config: InitConfig): void;
+    protected updateParams(params?: Partial<Params>): void;
+    protected sendUpdateParamsMessage(): void;
+}

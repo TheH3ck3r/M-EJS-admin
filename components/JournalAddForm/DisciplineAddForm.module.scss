@@ -1,0 +1,11 @@
+.expand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--ep-background-color) !important;
+  gap: 0.5em;
+  padding: 1em;
+  border: 1px solid var(--ep-item);
+  border-radius: 0.5em;
+  margin-top: 0.5em;
+}

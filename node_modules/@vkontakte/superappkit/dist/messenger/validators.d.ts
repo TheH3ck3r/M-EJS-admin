@@ -1,0 +1,7 @@
+import { Validator } from "../validator";
+import { MessengerInitConfig } from "./types";
+interface MessengerInitConfigValidator {
+    config: MessengerInitConfig;
+}
+export declare const messengerInitConfigValidator: Validator<MessengerInitConfigValidator>;
+export {};

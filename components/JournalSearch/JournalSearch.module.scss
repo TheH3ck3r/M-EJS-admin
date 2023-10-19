@@ -1,0 +1,70 @@
+.list {
+  list-style: none;
+  overflow-y: scroll;
+  max-height: 350px;
+  height: 100%;
+  padding: 0;
+  padding-right: 1em;
+  margin: 0;
+  margin-top: 0.25em;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--ep-item);
+    border-radius: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--ep-color-primary);
+    border-radius: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--ep-color-secondary);
+  }
+}
+
+.list_item {
+  padding: 0.25em 2em;
+  padding-left: 1em;
+  transition: 0.25s all ease-out;
+  border-radius: 0.5em;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--ep-item-hovered);
+  }
+  &_selected {
+    background-color: var(--ep-item-hovered);
+  }
+}
+
+.all_journal {
+  @extend .list_item;
+  display: block;
+  margin-top: 0.25em;
+  width: 91.5%;
+  color: var(--ep-text-color);
+
+  &_selected {
+    background-color: var(--ep-item-hovered);
+  }
+}
+
+.text {
+  margin-top: 1em;
+  display: block;
+}
+
+.list_item_link {
+  color: var(--ep-text-color);
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

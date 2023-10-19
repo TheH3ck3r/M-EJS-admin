@@ -1,0 +1,39 @@
+export declare enum MiniAppHostEvents {
+    GET_CAPTCHA = "VKSDKGetCaptcha",
+    APP_CLOSE = "VKWebAppClose",
+    APP_READY = "VKSDKMiniAppReady",
+    RESIZE = "VKSDKMiniAppResize",
+    APP_INIT_CONFIG = "VKSDKMiniAppInitConfig",
+    OPEN_APP = "VKWebAppOpenApp",
+    OPEN_PAY_FORM = "VKWebAppOpenPayForm",
+    ACTION_DONE = "VKWebAppActionDone",
+    SET_TITLE = "VKWebAppSetTitle",
+    AUTH_BY_EXCHANGE_TOKEN = "VKWebAppAuthByExchangeToken",
+    FORCE_LOGOUT = "VKWebAppForceLogout"
+}
+export declare enum MiniAppEvents {
+    /**
+     * Событие вызывается, когда мини-приложение открывается.
+     */
+    OPEN = "open",
+    /**
+     * Событие вызывается, когда мини-приложение скрывается.
+     */
+    HIDE = "hide",
+    /**
+     * Событие вызывается, когда мини-приложение закрывается.
+     */
+    CLOSE = "close",
+    /**
+     * Событие вызывается, когда мини-приложение показывается после скрытия.
+     */
+    SHOW = "show",
+    /**
+     * Событие вызывается, когда мини-приложение отправляет сообщение SDK.
+     */
+    MESSAGE = "message",
+    /**
+     * Событие вызывается, когда мини-приложение открывает другое мини-приложение.
+     */
+    CREATE_APP = "createapp"
+}

@@ -1,0 +1,15 @@
+import { OpenMiniAppQuery } from "../miniapp/types";
+export interface MiniAppServiceOpenParams {
+    /**
+     * `ID` мини-приложения.
+     */
+    app: string | number;
+    /**
+     * Строка запроса, которая будет добавлена к адресу загрузки мини-приложения.
+     */
+    query?: OpenMiniAppQuery;
+    /**
+     * Хеш, который будет добавлен к адресу загрузки мини-приложения.
+     */
+    hash?: string;
+}

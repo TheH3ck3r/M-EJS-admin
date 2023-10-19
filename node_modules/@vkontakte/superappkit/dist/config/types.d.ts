@@ -1,0 +1,77 @@
+import { AppSettings } from "../common/utils";
+export interface ConfigStore {
+    /**
+     * ID приложения, от лица которого будет работать SDK.
+     */
+    appId: number;
+    /**
+     * SuperAppToken первой версии.
+     */
+    superAppToken: string;
+    /**
+     * SuperAppToken второй версии.
+     */
+    superAppTokenV2: string;
+    /**
+     * @ignore
+     */
+    loginDomain: string;
+    /**
+     * @ignore
+     */
+    oauthDomain: string;
+    /**
+     * @ignore
+     */
+    connectDomain: string;
+    /**
+     * Настройки приложения.
+     * Эти настройки используются для авторизации приложения в VK ID.
+     * Позволяют менять некоторые интерфейсы при авторизации.
+     */
+    appSettings?: AppSettings;
+    /**
+     * @ignore
+     */
+    _debug: boolean;
+    /**
+     * @ignore
+     */
+    _localhost: boolean;
+}
+export interface ConfigOptions {
+    /**
+     * Версия SuperAppToken-а.
+     */
+    version?: number;
+}
+export interface RequestSuperAppTokenParams {
+    /**
+     * @deprecated
+     * Флаг указывающий на то, что надо обновить токен.
+     */
+    force?: boolean;
+    /**
+     * Флаг указывающий на то, что надо обновить токен.
+     */
+    refresh?: boolean;
+}
+/**
+ * Обработчик, который вызывается, когда библиотека запрашивает SuperAppToken.
+ */
+export declare type RequestSuperAppTokenHandler = (params: RequestSuperAppTokenParams, options?: ConfigOptions) => Promise<string> | void;
+/**
+ * Обработчик, который вызывается, когда библиотека запрашивает авторизацию.
+ */
+export declare type AuthHandler = (options?: ConfigOptions) => Promise<string> | void;
+export declare type OpenAppHandler = (app: string) => void;
+/**
+ * Обработчик, который вызыается, когда нужно разлогинить пользователя.
+ */
+export declare type LogoutHandler = () => void;
+export interface ConfigHandlers {
+    requestSuperAppToken?: RequestSuperAppTokenHandler;
+    auth?: AuthHandler;
+    openApp?: OpenAppHandler;
+    logout?: LogoutHandler;
+}

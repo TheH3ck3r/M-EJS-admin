@@ -1,0 +1,87 @@
+import mitt, { Emitter } from 'mitt';
+import { BridgeMessage } from "../common/bridge";
+import { CloseParams, MiniAppLoadParams, MiniAppParams, OpenMiniAppQuery } from './types';
+/**
+ * Перед началом нужно настроить `SDK` через библиотеку `Config`.
+ *
+ * Пример использования:
+ * ```
+ * const miniApp = new MiniApp({
+ *   app: 10000,
+ * });
+ *
+ * miniApp.open();
+ * ```
+ */
+export declare class MiniApp {
+    /**
+     * Св-во позволяет подписаться на события мини-приложения.
+     */
+    readonly events: Emitter;
+    private iframe;
+    private bridge;
+    private loading;
+    private readyPromiseResolve;
+    private readyPromise;
+    private params;
+    private child;
+    private readonly initialTitle;
+    /**
+     * Метод добавляет подписку на событие модуля.
+     */
+    on(event: string, handler: mitt.Handler): void;
+    /**
+     * Метод удаляет подписку на событие модуля.
+     public */
+    off(event: string, handler: mitt.Handler): void;
+    /**
+     * Создает экземпляр мини-приложения.
+     */
+    constructor(params: MiniAppLoadParams);
+    /**
+     * Метод показывает мини-приложение. Автоматически вызовет preload, если это не было сделано в ручную.
+     * Параметры `query` и `hash` будет добавлены к адресу загрузки мини-приложения.
+     */
+    readonly open: (query?: OpenMiniAppQuery | undefined, hash?: string | undefined) => Promise<void>;
+    private readonly eventOpenSettings;
+    /**
+     * Метод скрывает мини-приложение. Не удаляет его со страницы.
+     */
+    readonly hide: () => void;
+    /**
+     * Метод закрывает мини-приложение, так же он будет удален со страницы.
+     */
+    readonly close: (params?: CloseParams | undefined) => void;
+    /**
+     * Метод показывает мини-приложение.
+     */
+    readonly show: () => void;
+    /**
+     * Предзагрузка мини-приложения. Будет создан скрытый айфрейм.
+     * Параметры `query` и `hash` будет добавлены к адресу загрузки мини-приложения.
+     */
+    readonly preload: (query?: OpenMiniAppQuery | undefined, hash?: string | undefined) => Promise<void>;
+    /**
+     * Метод отправляет сообщение в айфрейм.
+     */
+    readonly sendMessage: (message: BridgeMessage<string>) => void;
+    private readonly onSuperAppToken;
+    /** Метод вызывается при событии ошибки со стороны айфрейма */
+    private readonly handleError;
+    private readonly handleMessage;
+    private readonly handleResize;
+    private readonly handleUpdateConfig;
+    /**
+     * Метод для обновления параметров
+     */
+    update: (params?: MiniAppParams | undefined) => void;
+    private readonly getMiniAppUrl;
+    private readonly resolveReadyPromise;
+    private readonly openMiniapp;
+    private readonly openPayForm;
+    private readonly setTitle;
+    private readonly onAuthByExchangeToken;
+    private readonly onForceLogout;
+    private readonly handleVKPayFormMessage;
+    protected sendUpdateParamsMessage(): void;
+}

@@ -1,0 +1,6 @@
+import { Validator } from "../validator";
+interface AuthQRInitConfigValidator {
+    container: HTMLElement;
+}
+export declare const authQRInitConfigValidator: Validator<AuthQRInitConfigValidator>;
+export {};

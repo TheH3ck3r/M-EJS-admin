@@ -1,0 +1,19 @@
+import { BaseModule } from "../baseModule";
+import { BridgeMessage } from "../common/bridge";
+import { UserEvents } from "./events";
+import { CommonSDKEvents } from "../common/events";
+import { UserInitConfig, ValidationPhoneParams } from "./types";
+import { RedirectAuthParams } from "../connect";
+export declare type Events = UserEvents | CommonSDKEvents | string;
+export declare class User extends BaseModule<UserInitConfig, Partial<UserInitConfig>, RedirectAuthParams> {
+    constructor(config: UserInitConfig);
+    protected getIframeUrl(): Promise<string>;
+    protected handleBridgeMessage(data: BridgeMessage<Events>): void;
+    protected getIframeContainer: () => HTMLElement;
+    /**
+     * Открывает iframe с валидацией номера телефона
+     *
+     * @param validationPhoneParams
+     */
+    validatePhone(validationPhoneParams: ValidationPhoneParams): void;
+}

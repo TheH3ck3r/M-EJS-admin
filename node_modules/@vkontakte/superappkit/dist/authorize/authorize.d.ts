@@ -1,0 +1,19 @@
+import { BaseModule } from "../baseModule";
+import { AuthorizeConfig, AuthorizeInitConfig, AuthorizeParams } from "./types";
+import { BridgeMessage } from "../common/bridge";
+import { AuthorizeEvents } from "./events";
+import { CommonSDKEvents } from "../common/events";
+export declare type Events = AuthorizeEvents | CommonSDKEvents | string;
+export declare class Authorize extends BaseModule<AuthorizeInitConfig, AuthorizeConfig, AuthorizeParams> {
+    private codeVerifier;
+    private codeChallenge;
+    cssText: string;
+    constructor(config: AuthorizeInitConfig);
+    protected handleBridgeMessage(data: BridgeMessage<Events>): void;
+    protected getIframeUrlParams(): Promise<string>;
+    open(params?: AuthorizeParams): Promise<void>;
+    protected getIframeUrl(): Promise<string>;
+    protected handleAfterUpdateConfig(): void;
+    protected handleAfterCreateIframe(): void;
+    protected updateZIndex(): void;
+}

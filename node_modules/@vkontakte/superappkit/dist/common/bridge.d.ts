@@ -1,0 +1,25 @@
+interface BridgeMessageData<H> {
+    handler: H;
+    params: Record<string, any>;
+}
+/**
+ * @ignore
+ */
+export interface BridgeMessage<H> extends BridgeMessageData<H> {
+    type: string;
+}
+declare type BridgeHandler<H> = (data: BridgeMessage<H>) => void;
+export declare type BridgeConfig = {
+    iframe: HTMLIFrameElement;
+    origin: string;
+};
+export default class Bridge<H> {
+    private handler;
+    private config;
+    constructor(config: BridgeConfig);
+    readonly destroy: () => void;
+    readonly onMessage: (handler: BridgeHandler<H>) => void;
+    readonly sendMessage: (message: BridgeMessageData<H>) => void;
+    private readonly handleMessage;
+}
+export {};

@@ -1,0 +1,9 @@
+/**
+ * Библиотека ошибок.
+ * ----------------------
+ * Позволяет создавать объект ошибки нужного типа.
+ *
+ * @module Errors
+ */
+export { makeError, makeLoadError, makeLegacyError, makeValidateError } from './errors';
+export type { SDKError } from './types';

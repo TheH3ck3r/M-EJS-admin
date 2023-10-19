@@ -1,0 +1,8 @@
+export declare type FrameProperties = {
+    height?: string;
+    width?: string;
+};
+export declare type FrameSettings = {
+    properties?: FrameProperties;
+    cssText?: string;
+};

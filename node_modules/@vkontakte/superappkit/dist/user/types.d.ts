@@ -1,0 +1,23 @@
+export interface UserInitConfig {
+    /**
+     * Контейнер, в котором отрисуется iframe
+     */
+    container: HTMLElement;
+}
+export interface ValidationPhoneParams {
+    /**
+     * Признак пропуска валидации
+     * true - может пропустить валидацию и не проходить ее сейчас
+     * false - не может пропустить валидацию, должен либо подтвердить номер, либо номер будет отвязан
+     */
+    canSkip: boolean;
+    /**
+     * Источник, с которого был открыт данный модуль (нужен для postMessage)
+     */
+    origin: string;
+    sid?: string;
+    /**
+     * Задает цветовую тему iframe.
+     */
+    scheme?: 'bright_light' | 'space_gray';
+}

@@ -1,0 +1,51 @@
+import { AuthAction, AdaptivitySwitchObserver, VKOneTapAuthOptions, ButtonOneTapAuthOptions, FloatingOneTapAuthOptions, InitStatsInfo } from "./types";
+import { URLParams } from "../common/utils";
+export declare function makeAuthActionString(authAction?: AuthAction): string;
+export declare function makeInitStatsInfo(entry?: InitStatsInfo): string;
+export declare function makeAdaptivitySwitchObserver(): AdaptivitySwitchObserver;
+export declare const CONNECT_AUTH_RESPONSE_TYPE = "silent_token";
+export declare function makeAuthUrl(params: URLParams, authPage?: string): Promise<string>;
+export declare function getFloatingOneTapAuthOptions(isAdaptive: boolean, options?: FloatingOneTapAuthOptions): VKOneTapAuthOptions;
+export declare const allowedLanguages: number[];
+export declare enum ButtonOneTapDisplayModes {
+    Default = "default",
+    NamePhone = "name_phone",
+    PhoneName = "phone_name"
+}
+/**
+ * Перечисление, определяющий цветовой стиль кнопки.
+ */
+export declare enum ButtonOneTapSkin {
+    /**
+     * Основной стиль.
+     */
+    Primary = "primary",
+    /**
+     * Плоский стиль.
+     */
+    Flat = "flat"
+}
+/**
+ * Объект, определяющий размерный стиль кнопки.
+ */
+export interface ButtonOneTapStyle {
+    /**
+     * Значение высоты кнопки.
+     */
+    height?: number;
+    /**
+     * Значение скругления границ кнопки.
+     */
+    borderRadius?: number;
+}
+/**
+ * Объект, содержащий стили для FloatingOneTapAuthOptions
+ */
+export interface FloatingOneTapStyle {
+    /**
+     *  Значение z-index для кнопки
+     */
+    zIndex?: number;
+}
+export declare function getButtonOneTapAuthOptions(options: ButtonOneTapAuthOptions): VKOneTapAuthOptions;
+export declare const isDomainAllowed: (domain: string) => boolean;

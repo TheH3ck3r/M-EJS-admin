@@ -1,0 +1,13 @@
+import { BaseModule } from "../baseModule";
+import { AuthQRInitConfig, AuthQRParams } from "./types";
+import { BridgeMessage } from "../common/bridge";
+import { CommonSDKEvents } from "../common/events";
+import { AuthQREvents } from "./events";
+export declare type Events = AuthQREvents | CommonSDKEvents | string;
+export declare class AuthQR extends BaseModule<AuthQRInitConfig, Partial<AuthQRInitConfig>, AuthQRParams> {
+    constructor(config: AuthQRInitConfig);
+    protected getIframeUrl(): Promise<string>;
+    protected getIframeUrlParams(): Promise<string>;
+    protected handleBridgeMessage(data: BridgeMessage<Events>): void;
+    protected getIframeContainer: () => HTMLElement;
+}

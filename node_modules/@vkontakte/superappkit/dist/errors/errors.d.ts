@@ -1,0 +1,6 @@
+import { CommonError, ConnectAuthError, ERROR_CODES } from "../common/errors";
+import { SDKError } from "./types";
+export declare function makeError<T>(type: string, code: ERROR_CODES | number, message: string, params?: T): SDKError;
+export declare function makeLoadError(): SDKError;
+export declare function makeValidateError<T>(message: string, params?: T): SDKError;
+export declare function makeLegacyError(error: SDKError): CommonError | ConnectAuthError;

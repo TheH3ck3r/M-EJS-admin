@@ -1,0 +1,10 @@
+export declare enum UserEvents {
+    /**
+     * Событие изменения высоты контента
+     */
+    CONTENT_IN_HEIGHT = "VKSDKUserContentInHeight",
+    /**
+    * Событие сигнализирующее модулю сделать validationPhoneSkip
+    */
+    VALIDATION_PHONE_CLOSE = "VKSDKUserValidationPhoneClose"
+}

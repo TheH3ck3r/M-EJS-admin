@@ -1,0 +1,24 @@
+import { InitStatsInfo } from "../connect/types";
+/**
+ * Объект, содержащий параметры, необходимые для открытия авторизации через qr-код.
+ */
+export interface AuthQRParams {
+    /**
+     * Задает цветовую тему iframe.
+     */
+    scheme?: 'bright_light' | 'space_gray' | 'vkcom_light' | 'vkcom_dark';
+}
+export interface AuthQRInitConfig {
+    /**
+     * Контейнер, в котором отрисуется iframe с qr-кодом.
+     */
+    container: HTMLElement;
+    /**
+     * Идентификатор языка, на который будет переведен весь текст.
+     */
+    langId?: number;
+    /**
+     * @ignore
+     */
+    entry?: InitStatsInfo;
+}

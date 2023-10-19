@@ -1,0 +1,11 @@
+/**
+ * Библиотека мессенджера.
+ * ----------------------
+ * Позволяет открывать виджет сообщений с сообществами.
+ *
+ * @module Messenger
+ */
+export { Messenger } from './messenger';
+export type { MessengerParams, MessengerInitConfig, MessengerConfig, MessengerStyles } from './types';
+export { MessengerEvents } from './events';
+export type { BridgeMessage as MessengerMessage } from "../common/bridge";

@@ -1,0 +1,39 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isEqual = isEqual;
+
+var _type_checkers = require("./type_checkers");
+
+function isEqual(value, other) {
+  if (value === other) {
+    return true;
+  }
+
+  if (value == null || other == null || !(0, _type_checkers.isObjectLike)(value) && !(0, _type_checkers.isObjectLike)(other)) {
+    return value !== value && other !== other;
+  }
+
+  if ((0, _type_checkers.isObjectLike)(value) && (0, _type_checkers.isObjectLike)(other)) {
+    if (Object.keys(value).length !== Object.keys(other).length) {
+      return false;
+    }
+
+    for (var prop in value) {
+      if (value.hasOwnProperty(prop) && other.hasOwnProperty(prop)) {
+        if (!isEqual(value[prop], other[prop])) {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  return false;
+}
+//# sourceMappingURL=equal.js.map

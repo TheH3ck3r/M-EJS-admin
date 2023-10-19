@@ -1,0 +1,28 @@
+import { DecodeCoordsParams, DecodeCoordsResponse, DirectionsParams, DirectionsResponse, EncodeCoordsParams, EncodeCoordsResponse, ISOParams, ISOResponse, StaticMapRequestParams, GeoserviceConfig } from './types';
+export declare enum GeoserviceEvents {
+    STATIC_MAP = "VKSDKRequestToGeoservice:staticmap/png/",
+    SEARCH = "VKSDKRequestToGeoservice:search",
+    OVERALL = "VKSDKRequestToGeoservice:overall",
+    DIRECTIONS = "VKSDKRequestToGeoservice:directions",
+    ISO = "VKSDKRequestToGeoservice:iso"
+}
+export declare class GeoService {
+    private readonly iframe;
+    private bridge;
+    private readonly requestMap;
+    private apiKey;
+    constructor(config: GeoserviceConfig);
+    /**
+     * Метод добавляет апи токен.
+     *
+     * @param apiKey апи токен
+     */
+    setApiKey(apiKey: string): void;
+    private getGeoserviceProxyUrl;
+    private prepareAnswer;
+    getStaticMap(params: StaticMapRequestParams): Promise<string>;
+    encodeCoords(params: DecodeCoordsParams): Promise<EncodeCoordsResponse>;
+    decodeCoords(params: EncodeCoordsParams): Promise<DecodeCoordsResponse>;
+    getDirections(params: DirectionsParams): Promise<DirectionsResponse>;
+    getISO(params: ISOParams): Promise<ISOResponse>;
+}

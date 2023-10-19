@@ -1,0 +1,131 @@
+/**
+ * @ignore
+ */
+export declare enum DataPolicyEventsSDK {
+    SHOW_DATA_POLICY = "VKSDKOneTapAuthConnectDataPolicy",
+    HIDE_DATA_POLICY = "VKSDKOneTapAuthDataPolicyClose",
+    DATA_POLICY_RESULT = "VKSDKOneTapAuthDataPolicyResult",
+    SHOW_CAPTCHA = "VKSDKOneTapAuthDataPolicyShowCaptcha"
+}
+/**
+ * @ignore
+ */
+export declare enum PolicyAgreementsEventsSDK {
+    SHOW_POLICY_AGREEMENTS = "VKSDKOneTapAuthPolicyAgreementsShow",
+    HIDE_POLICY_AGREEMENTS = "VKSDKOneTapAuthPolicyAgreementsHide",
+    ACCEPT_POLICY_AGREEMENTS = "VKSDKOneTapAuthPolicyAgreementsAccept",
+    DECLINE_POLICY_AGREEMENTS = "VKSDKOneTapAuthPolicyAgreementsDecline",
+    POLICY_AGREEMENTS_ERROR = "VKSDKOneTapAuthPolicyAgreementsError",
+    SHOW_DATA_POLICY = "VKSDKOneTapAuthPolicyAgreementsShowDataPolicy",
+    GET_CAPTCHA = "VKSDKGetCaptcha",
+    CAPTCHA_SUCCESS = "VKSDKGetCaptchaSuccess",
+    CAPTCHA_FAIL = "VKSDKGetCaptchaFail"
+}
+/**
+ * События, используемые при обработке в методе oneTapAuth
+ */
+export declare enum OneTapAuthEventsSDK {
+    /**
+     * Событие, которое возникает при необходимости валидации номера
+     */
+    PHONE_VALIDATION_NEEDED = "VKSDKOneTapAuthPhoneValidationNeeded",
+    /**
+     * Событие, которое возникает при необходимости полной авторизации
+     */
+    FULL_AUTH_NEEDED = "VKSDKOneTapAuthFullAuthNeeded",
+    /**
+     * Событие, которое возникает при обозначении загрузки параметров авторизации
+     */
+    AUTH_DATA_LOADED = "VKSDKOneTapAuthDataLoaded",
+    /**
+     * Событие, которое возникает при обозначении неавторизованности пользователя
+     */
+    NOT_AUTHORIZED = "VKSDKOneTapAuthNotAuthorized",
+    /**
+     * Событие, которое возникает при успешной авторизации пользователя
+     */
+    LOGIN_SUCCESS = "VKSDKOneTapAuthLoginSuccess",
+    /**
+     * Событие, которое возникает при успешной авторизации пользователя
+     */
+    LOGIN_FAILED = "VKSDKOneTapAuthLoginFailed",
+    /**
+     * Событие, которое возникает при необходимости изменить размер фрейма
+     */
+    RESIZE_FRAME = "VKSDKOneTapResizeFrame",
+    /**
+     * Событие, которое возникает при необходимости отображения капчи
+     */
+    SHOW_CAPTCHA = "VKSDKOneTapShowCaptcha",
+    /**
+     * Событие, которое возникает при необходимости валидации капчи
+     */
+    VALIDATE_CAPTCHA = "VKSDKOneTapValidateCaptcha",
+    /**
+     * Событие, которое возникает при необходимости обновления параметров
+     */
+    UPDATE_PARAMS = "VKSDKUpdateParams",
+    /**
+     * Событие, которое возникает при необходимости открытия модуля Authorize
+     */
+    AUTHORIZE_NEEDED = "VKSDKButtonOneTapAuthAuthorizeNeeded"
+}
+/**
+ * События, используемые при обработке в методе floatingOneTapAuth
+ */
+export declare enum FloatingOneTapAuthEventsSDK {
+    /**
+     * Событие, которое возникает при закрытии авторизации
+     */
+    CLOSE_AUTH = "VKSDKOneTapAuthClose",
+    /**
+     * Событие, которое возникает при обозначении факта изменения размера фрейма
+     */
+    ADAPTIVITY_CHANGE = "VKSDKFloatingOneTapAdaptivityChange",
+    /**
+     * Событие, которое возникает при окончании изменения размера фрейма
+     */
+    ADAPTIVITY_CHANGED = "VKSDKFloatingOneTapAdaptivityChanged",
+    /**
+     * Событие, которое возникает при необходимости обновления параметров
+     */
+    UPDATE_PARAMS = "VKSDKUpdateParams"
+}
+/**
+ * События, используемые для обозначения успешности прикрепления аккаунта
+ */
+export declare enum ButtonOneTapAuthEventsSDK {
+    /**
+     * Событие, которое возникает при клике на кнопку входа для не авторизированного пользователя
+     */
+    SHOW_LOGIN = "VKSDKButtonOneTapAuthShowLogin",
+    /**
+     * Событие, которое возникает при клике на дополнительные возможности логина
+     */
+    SHOW_LOGIN_OPTIONS = "VKSDKButtonOneTapAuthShowLoginOptions",
+    /**
+     * Событие, которое возникает при клике на кнопку "продолжить как..." для авторизированного пользователя
+     */
+    SHOW_AGREEMENTS_DIALOG = "VKSDKButtonOneTapAuthShowAgreementsDialog",
+    /**
+     * Событие, которое возникает при после проверки возможности авторизации пользователя
+     */
+    START_AUTHORIZE = "VKSDKButtonOneTapAuthStartAuthorize",
+    /**
+     * Событие, которое возникает при необходимости обновления параметров
+     */
+    UPDATE_PARAMS = "VKSDKUpdateParams"
+}
+/**
+ * События, используемые для обозначения успешности прикрепления аккаунта
+ */
+export declare enum BindAccountErrorEventsSDK {
+    /**
+     * Событие, которое возникает при неверно переданном токене
+     */
+    WRONG_TOKEN = "VKSDKBindAccountErrorWrongToken",
+    /**
+     * Событие, которое возникает при повторной попытке прикрепить аккаунт
+     */
+    ALREADY_BIND = "VKSDKBindAccountErrorAlreadyBind"
+}

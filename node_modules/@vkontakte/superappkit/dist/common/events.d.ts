@@ -1,0 +1,15 @@
+export declare enum CommonSDKEvents {
+    OPEN = "VKSDKOpen",
+    CLOSE = "VKSDKClose",
+    LOGOUT = "VKSDKLogout",
+    GET_CAPTCHA = "VKSDKGetCaptcha",
+    CAPTCHA_SUCCESS = "VKSDKGetCaptchaSuccess",
+    CAPTCHA_FAILED = "VKSDKGetCaptchaFail",
+    AUTH_NEEDED = "VKSDKAuthNeeded",
+    UPDATE_PARAMS = "VKSDKUpdateParams",
+    REQUEST_SUPERAPP_TOKEN = "VKSDKRequestSuperAppToken",
+    ERROR = "VKSDKError"
+}
+export declare enum CommonInternalSDKEvents {
+    INIT = "VKSDKInit"
+}

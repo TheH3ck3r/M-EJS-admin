@@ -1,0 +1,8 @@
+export interface OpenAccountAction {
+    name: 'open_account';
+    token: string;
+}
+export declare type AccountAction = OpenAccountAction;
+export interface OpenAccountParams {
+    action: AccountAction;
+}

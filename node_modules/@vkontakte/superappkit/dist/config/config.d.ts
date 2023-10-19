@@ -1,0 +1,79 @@
+import mitt from 'mitt';
+import { ConfigOptions, ConfigStore, AuthHandler, OpenAppHandler, LogoutHandler, RequestSuperAppTokenHandler } from './types';
+/**
+ * Пример использования:
+ *
+ * ```
+ * Config.init({
+ *   app_id: 111111,
+ * });
+ *
+ * Config.onRequestSuperAppToken(() => {
+ *   Config.setSuperAppToken('superapptoken приложения');
+ * });
+ *
+ * Config.onAuth(() => {
+ *   Config.setSuperAppToken('superapptoken приложения');
+ * });
+ *
+ * Config.onLogout(() => {
+ *    window.location.reload();
+ * });
+ * ```
+ */
+export declare class Config {
+    /**
+     * Св-во позволяет подписаться на общие события SDK.
+     */
+    static events: mitt.Emitter;
+    /**
+     * @ignore
+     */
+    constructor();
+    /**
+     * Метод инициализации. Позволяет установить базовые настройки для всех модулей SDK.
+     */
+    static init(params: Partial<ConfigStore>): void;
+    /**
+     * Метод возвращает текущие настройки.
+     */
+    static get(): ConfigStore;
+    /**
+     * Метод позволяет установить SuperAppToken.
+     * Этот токен будут использовать другие модули SDK.
+     */
+    static setSuperAppToken(token: string, options?: ConfigOptions): void;
+    /**
+     * Метод позволяет подписаться на событие запроса SuperAppToken-а.
+     */
+    static onRequestSuperAppToken(handler: RequestSuperAppTokenHandler): void;
+    /**
+     * @ignore
+     */
+    static _requestSuperAppToken(params: any, options?: ConfigOptions): void;
+    /**
+     * Метод позволяет подписаться на событие запроса авторизации.
+     */
+    static onAuth(handler: AuthHandler): void;
+    /**
+     * @ignore
+     */
+    static _auth(options?: ConfigOptions): void;
+    /**
+     * @ignore
+     */
+    static onOpenApp(handler: OpenAppHandler): void;
+    /**
+     * @ignore
+     */
+    static _openApp(params: any): void;
+    /**
+     * Метод позволяет подписаться на событие разлогина.
+     */
+    static onLogout(handler: LogoutHandler): void;
+    /**
+     * @ignore
+     */
+    static _logout(): void;
+    static fetchDomain(): Promise<void>;
+}

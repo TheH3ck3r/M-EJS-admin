@@ -1,0 +1,54 @@
+import { MiniAppHostEvents } from "./events";
+import { ConfigEvents } from "../config/events";
+import { CommonSDKEvents } from "../common/events";
+export declare type BridgeEvents = MiniAppHostEvents | ConfigEvents | CommonSDKEvents;
+export declare type ReadyPromiseResolve = () => void;
+export interface OpenMiniAppQuery {
+    /**
+     * Параметры открытия мини-приложения.
+     */
+    [index: string]: any;
+}
+export interface OpenChildMiniappParams {
+    app_id: string | number;
+    location?: string;
+}
+export interface VKPayFormParams {
+    app_id: number;
+    action: string;
+    params: Record<string, any>;
+}
+export interface MiniAppLoadParams {
+    /**
+     * `ID` или название мини-приложения.
+     */
+    app: string | number;
+    /**
+     * `Z-index` мини-приложения. Позволяет показывать его поверх других элементов на странице.
+     */
+    zIndex?: number;
+    /**
+     * Включает полноэкранный режим для отображения мини-приложения.
+     */
+    fullMode?: boolean;
+    /**
+     * Скрывает меню мини-приложения.
+     */
+    hideMenu?: boolean;
+    /**
+     * @ignore
+     */
+    stackMode?: boolean;
+    /**
+     * Тема для модуля мини-приложений
+     */
+    scheme?: 'bright_light' | 'space_gray';
+}
+export declare type MiniAppParams = Pick<MiniAppLoadParams, 'scheme' | 'hideMenu' | 'fullMode'>;
+export interface SetTitleParams {
+    title: string;
+}
+export interface CloseParams {
+    closedByExchangeToken?: boolean;
+    closedByForceLogout?: boolean;
+}

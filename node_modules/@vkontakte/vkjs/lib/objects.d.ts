@@ -1,0 +1,1 @@
+export declare function deleteObjectKeys<T extends Record<string, any>, K extends keyof T>(object: T, keys?: K[]): T;

@@ -1,0 +1,17 @@
+import { ValidatorRule } from "./types";
+import { SDKError } from "../errors";
+import { CommonError, ConnectAuthError } from "../common/errors";
+declare class ValidationResult<T> {
+    private readonly errorText;
+    private readonly params;
+    private readonly valid;
+    constructor(errorText: string | undefined, params: T, valid?: boolean);
+    isValid(): boolean;
+    error(isLegacy?: boolean): SDKError | CommonError | ConnectAuthError | null;
+}
+export declare class Validator<T> {
+    private readonly rules;
+    constructor(rules: Record<keyof T, ValidatorRule[]>);
+    validate(params: T): ValidationResult<T>;
+}
+export {};

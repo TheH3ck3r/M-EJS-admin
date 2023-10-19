@@ -1,0 +1,27 @@
+import { VerificationProfileEvents } from './events';
+import { BridgeMessage } from "../common/bridge";
+import { CommonSDKEvents } from "../common/events";
+import { BaseModule } from "../baseModule/baseModule";
+import { VerificationProfileConfig, VerificationProfileInitConfig, VerificationProfileParams } from './types';
+export declare type Events = VerificationProfileEvents | CommonSDKEvents | string;
+/**
+ * Перед началом необходимо настроить `SDK` через библиотеку `Config`.
+ *
+ * Пример использования:
+ * ```
+ * import { VerificationProfile } from '@vkontakte/superappkit';
+ *
+ * const verificationProfile = new VerificationProfile({ provider });
+ * verificationProfile.open({});
+ * ```
+ */
+export declare class VerificationProfile extends BaseModule<VerificationProfileInitConfig, VerificationProfileConfig, VerificationProfileParams> {
+    cssText: string;
+    constructor(config: VerificationProfileInitConfig);
+    protected handleBridgeMessage(data: BridgeMessage<Events>): void;
+    protected handleAfterUpdateConfig(): void;
+    protected handleAfterCreateIframe(): void;
+    protected getIframeUrlParams(): Promise<string>;
+    protected getIframeUrl(): Promise<string>;
+    protected updateZIndex(): void;
+}

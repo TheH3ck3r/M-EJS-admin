@@ -1,0 +1,8 @@
+import { OpenAccountParams } from "./types";
+export declare class Account {
+    /**
+     * Метод открывает в новом табе Личный Кабенет VK-ID
+     * @param params: OpenAccountParams
+     */
+    static readonly open: (params: OpenAccountParams) => Promise<any>;
+}

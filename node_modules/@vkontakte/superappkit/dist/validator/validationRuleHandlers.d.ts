@@ -1,0 +1,6 @@
+export declare function isNumberHandler(value: any): boolean;
+export declare function isStringHandler(value: any): boolean;
+export declare function isRequiredHandler(value: any): boolean;
+export declare function isNegativeHandler(value: any): boolean;
+export declare function isNumberOrStringHandler(value: any): boolean;
+export declare function isFunctionHandler(value: any): boolean;

@@ -1,0 +1,48 @@
+.form {
+  margin: auto;
+  margin-top: 2em;
+  max-width: 660px;
+}
+
+.island {
+  display: flex;
+  padding: 1em;
+  max-height: 396px;
+  gap: 0.5em;
+  border-radius: 0.5rem !important;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  overflow-y: scroll;
+  padding-right: 0.5em;
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--ep-item);
+    border-radius: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--ep-color-primary);
+    border-radius: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--ep-color-secondary);
+  }
+}
+
+.row {
+  display: flex;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.segments {
+  display: flex;
+  width: 100%;
+}

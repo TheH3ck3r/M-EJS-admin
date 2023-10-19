@@ -1,0 +1,17 @@
+import { Validator } from "../validator";
+import { BridgeConfig } from "./bridge";
+interface MessageEventValidator {
+    event: MessageEvent;
+}
+interface MessageDataRequirementValidator {
+    handler: any;
+    params: Record<string, any>;
+}
+interface BridgeHandlerValidator {
+    handler: any;
+}
+export declare const bridgeConfigValidator: Validator<BridgeConfig>;
+export declare const messageEventValidator: Validator<MessageEventValidator>;
+export declare const bridgeHandlerValidator: Validator<BridgeHandlerValidator>;
+export declare const messageDataRequirementValidator: Validator<MessageDataRequirementValidator>;
+export {};

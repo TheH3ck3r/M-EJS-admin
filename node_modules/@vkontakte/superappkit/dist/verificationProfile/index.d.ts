@@ -1,0 +1,11 @@
+/**
+ * VerificationProfile
+ * ----------------------
+ * Модуль позволяет запустить процессы связывания профиля VK ID c Госуслугами и верификации аккаунта VK ID c помощью Госуслуг.
+ *
+ * @module VerificationProfile
+ */
+export { VerificationProfile } from './verificationProfile';
+export type { VerificationProfileConfig, VerificationProfileInitConfig, VerificationProfileParams } from './types';
+export { VerificationProfileEvents } from './events';
+export type { BridgeMessage as MessengerMessage } from "../common/bridge";

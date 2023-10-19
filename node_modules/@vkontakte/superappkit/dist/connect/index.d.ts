@@ -1,0 +1,20 @@
+/**
+ * Модуль VK ID.
+ *
+ * @module VK ID
+ */
+export { Connect } from './connect';
+import { OneTapAuthEventsSDK, FloatingOneTapAuthEventsSDK, ButtonOneTapAuthEventsSDK, DataPolicyEventsSDK } from './events';
+/**
+ * @enum
+ */
+export declare const ConnectEvents: {
+    readonly OneTapAuthEventsSDK: typeof OneTapAuthEventsSDK;
+    readonly FloatingOneTapAuthEventsSDK: typeof FloatingOneTapAuthEventsSDK;
+    readonly ButtonOneTapAuthEventsSDK: typeof ButtonOneTapAuthEventsSDK;
+    readonly DataPolicyEventsSDK: typeof DataPolicyEventsSDK;
+};
+export { OneTapAuthEventsSDK, FloatingOneTapAuthEventsSDK, ButtonOneTapAuthEventsSDK, DataPolicyEventsSDK } from './events';
+export type { AuthParams, BindOKAccount, BridgeEvents, ButtonOneTapAuthDisplayModes, ButtonOneTapAuthOptions, ButtonOneTapAuthParams, ConfirmServiceAction, ExternalUser, FloatingOneTapAuthParams, RedirectAuthParams, VKAuthButtonCallbackResult, VKAuthButtonError, VKAuthButtonErrorPayload, VKAuthButtonResult, VKAuthSuccessResult, VKDataPolicyAgreementsResult, VKUserVisibleAuthResult, VKDataPolicyResult, AuthButtonType, AuthButtonParams, VKDataPolicyPayload, VKOneTapAuthResult, VKOneTapAuthButtonResult, VKSilentAuthPayload, VKSilentUser, VKOAuthCallback, AuthAction, ExtendToken, AuthWithUser, SferumInviteLink, LoginSilentUser, RegistrationWithPhone, RegistrationWithEmail, ValidatePhone, FloatingOneTapAuthOptions, NoPasswordFlow, } from './types';
+export type { BindAccountErrorEventsSDK, PolicyAgreementsEventsSDK } from './events';
+export type { ButtonOneTapSkin, ButtonOneTapStyle, FloatingOneTapStyle } from './utils';

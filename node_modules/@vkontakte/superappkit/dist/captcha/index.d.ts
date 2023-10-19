@@ -1,0 +1,2 @@
+export { AuthCaptchaEventsSDK } from './events';
+export type { VKAuthCaptchaSetupData, VKAuthCaptchaSuccessData } from './types';

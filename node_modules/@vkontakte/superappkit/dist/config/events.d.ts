@@ -1,0 +1,9 @@
+export declare enum ConfigEvents {
+    SUPERAPP_TOKEN = "VKSDKGeneralSuperAppToken",
+    AUTH_NEEDED = "VKSDKGeneralAuthNeeded",
+    OPEN_APP = "VKSDKGeneralOpenApp"
+}
+export declare enum ConfigInternalEvents {
+    SUPERAPP_TOKEN_CHANGE_V2 = "superAppTokenV2",
+    SUPERAPP_TOKEN_CHANGE = "superAppToken"
+}

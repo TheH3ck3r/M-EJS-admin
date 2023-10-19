@@ -1,0 +1,26 @@
+import { URLParams } from "../common/utils";
+import mitt from 'mitt';
+import { BridgeMessage } from "../common/bridge";
+import { Validator } from "./validator";
+interface OnOffValidator {
+    event: string;
+    handler: mitt.Handler;
+}
+interface MiniAppLoadParamsValidator {
+    app: string | number;
+}
+interface MessageRequirementValidator {
+    message: BridgeMessage<any>;
+}
+interface URLParamsValidator {
+    params: URLParams;
+}
+interface TokenValidator {
+    token: string;
+}
+export declare const URLParamsValidator: Validator<URLParamsValidator>;
+export declare const tokenValidator: Validator<TokenValidator>;
+export declare const onOffValidator: Validator<OnOffValidator>;
+export declare const miniAppParamsValidator: Validator<MiniAppLoadParamsValidator>;
+export declare const messageRequirementValidator: Validator<MessageRequirementValidator>;
+export {};

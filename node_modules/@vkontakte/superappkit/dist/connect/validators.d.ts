@@ -1,0 +1,19 @@
+import { Validator } from "../validator";
+import { ButtonOneTapAuthParams, VKAuthButtonCallbackResult } from "./types";
+interface UuidValidator {
+    uuid: string;
+}
+interface RedirectAuthValidator {
+    url: string;
+}
+interface ButtonOneTapAuthParamsValidator {
+    params: ButtonOneTapAuthParams;
+}
+interface FloatingOneTapAuthCallbackValidator {
+    callback: (result: VKAuthButtonCallbackResult) => void;
+}
+export declare const redirectAuthValidator: Validator<RedirectAuthValidator>;
+export declare const uuidValidator: Validator<UuidValidator>;
+export declare const buttonOneTapAuthParamsValidator: Validator<ButtonOneTapAuthParamsValidator>;
+export declare const authCallbackValidator: Validator<FloatingOneTapAuthCallbackValidator>;
+export {};

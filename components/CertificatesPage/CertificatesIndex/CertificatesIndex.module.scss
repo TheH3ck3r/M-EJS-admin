@@ -1,0 +1,27 @@
+.container {
+  margin: 1em;
+  width: 100%;
+}
+
+.header {
+  background-color: var(--ep-color-primary);
+  padding: 0.5em;
+}
+
+.text {
+  padding: 1em;
+  color: #fff !important;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  padding-left: 1em;
+  padding-top: 0.5em;
+}
+
+.bottom {
+  padding-left: 1em;
+  padding-top: 1em;
+}

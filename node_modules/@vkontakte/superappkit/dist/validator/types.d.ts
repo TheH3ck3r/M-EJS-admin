@@ -1,0 +1,6 @@
+declare type ValidatorRuleHandler = (value: any) => boolean;
+export interface ValidatorRule {
+    rule: ValidatorRuleHandler;
+    errorText?: string;
+}
+export {};

@@ -1,0 +1,34 @@
+export interface AuthorizeInitConfig {
+    /**
+     * Список запрашиваемых данных
+     */
+    scope: string;
+    /**
+     * Страница, куда нужно будет сделать редирект
+     */
+    redirect_uri?: string;
+    /**
+     * Цветовая тема модуля.
+     * Значение по умолчанию - "bright_light".
+     */
+    scheme?: 'bright_light' | 'space_gray';
+    /**
+     * Айди девайса для генерации токена
+     */
+    device_id: string;
+    /**
+     * z-index для айфрейма процесса верификации
+     */
+    zIndex?: number;
+}
+export declare type AuthorizeConfig = Partial<AuthorizeInitConfig>;
+export declare type AuthorizeParams = Partial<AuthorizeConfig>;
+export declare type AuthorizeEventData = {
+    params: {
+        scope: string;
+        device_id: number;
+        uuid: string;
+        code: string;
+        code_verifier: string;
+    };
+};

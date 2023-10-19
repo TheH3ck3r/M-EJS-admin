@@ -1,0 +1,66 @@
+import { FrameSettings } from "./types";
+export declare type URLParams = {
+    [key: string]: string | number | null;
+};
+/**
+ * Глобальные настройки приложения.
+ * Эти настройки позволяют переопределить интерфейс и поведение во время авторизации.
+ */
+export interface AppSettings {
+    /**
+     * Позволяет перезаписать отображаемые в авторизации текст и ссылки соглашений.
+     */
+    agreements?: string;
+    /**
+     * Позволяет перезаписать текст и иконки в промо авторизации.
+     */
+    promo?: string;
+    /**
+     * Позволяет изменить флоу авторизации.
+     */
+    vkc_behavior?: string;
+    /**
+     * Позволяет изменить тексты на экранах авторизации.
+     */
+    vkc_auth_action?: string;
+    /**
+     * Кастомизация авторизации под конкретный сервис.
+     */
+    vkc_brand?: string;
+    /**
+     * Позволяет выбрать режим отображения авторизации: одна или две колонки.
+     */
+    vkc_display_mode?: string;
+    /**
+     * Параметр позволяет передавать от сервиса произвольные данные.
+     */
+    service_groups?: Record<string, string>;
+    /**
+     * @ignore
+     */
+    external_device_id?: string;
+}
+export declare type AppSettingsKeys = keyof AppSettings;
+export declare function makeParams(params: URLParams): string;
+export declare function parseParams(query: string): Record<string, any>;
+export declare function hasAllowedAppSettingsParams(appSettings: AppSettings): boolean;
+export declare function filterAllowedAppSettings(appSettings: AppSettings): AppSettings;
+export declare function makeAppSettingsString(appSettings: AppSettings): string;
+export declare function makeFrame(src?: string, frameSettings?: FrameSettings): HTMLIFrameElement;
+export declare function makeModalFrame(src?: string): HTMLIFrameElement;
+export declare function getScrollbarSize(): number;
+export declare function mergeDeep<T>(...objects: Array<Record<string, any>>): T;
+export declare function getOrigin(): string;
+/**
+ Конвертация булевого значения в числа
+ */
+export declare function getNumberFromBoolean(value: boolean | number | undefined, defaultValue: number): number;
+/**
+ Фильтрация свойств объекта на верхнем уровне, без вложенных свойств
+ */
+export declare function filterObjectKeys(obj: any, filterKeys: string[]): any;
+/**
+ Генерация code_challenge для нового oauth
+ */
+export declare const generateCodeChallenge: (codeVerifier: string) => string;
+export declare const generateCodeVerifier: () => string;

@@ -1,0 +1,219 @@
+export interface GeoserviceConfig {
+    apiKey: string;
+}
+export interface StaticMapRequestParams {
+    width?: number;
+    height?: number;
+    zoom?: number;
+    pins?: string;
+    style?: string;
+    latlon: string;
+}
+export interface EncodeCoordsParams {
+    q: string;
+    format?: 'json' | 'geojson';
+    lang?: string;
+    limit?: number;
+    fields?: string | string[];
+}
+export interface DecodeCoordsParams extends EncodeCoordsParams {
+    width?: number;
+}
+export interface CoordsGeometry {
+    bbox: [number, number, number, number];
+    pin: [number, number];
+}
+export interface AddressDetails {
+    building: string;
+    country: string;
+    isocode: string;
+    locality: string;
+    postal_code: string;
+    region: string;
+    street: string;
+    subregion: string;
+    suburb: string;
+}
+export interface EncodeCoordsResponseResult {
+    address?: string;
+    weight?: number;
+    kind?: string;
+    address_details?: AddressDetails;
+    geometry?: CoordsGeometry;
+}
+export interface EncodeCoordsResponse {
+    request: string;
+    results: EncodeCoordsResponseResult;
+}
+export interface DecodeCoordsResponse extends Omit<EncodeCoordsResponse, 'request'> {
+    request: [number, number];
+}
+export interface DirectionLocation {
+    lat: number;
+    lon: number;
+    heading?: number;
+    type?: string;
+}
+export interface DirectionsParams {
+    locations: DirectionLocation[];
+    type?: 'break' | 'through' | 'via' | 'break_through';
+    heading?: number;
+    costing?: 'auto' | 'truck' | 'pedestrian' | 'bicycle' | 'taxi';
+    costing_options?: CostingOptions;
+    units?: 'kilometers' | 'miles';
+    language?: 'ru-RU' | 'en-US';
+    id?: string;
+    directions_type?: 'none' | 'maneuvers' | 'instructions';
+    avoid_locations?: Array<{
+        lat: number;
+        lon: number;
+    }>;
+    date_time?: {
+        type: 0 | 1 | 2;
+        value: string;
+    };
+    traffic?: boolean;
+}
+declare type Legs = {
+    shape: 'string';
+    maneuvers: Array<{
+        travel_type: string;
+        travel_mode: string;
+        begin_shape_index: number;
+        length: number;
+        end_shape_index: number;
+        instruction: string;
+        verbal_pre_transition_instruction?: string;
+        verbal_transition_alert_instruction?: string;
+        verbal_post_transition_instruction?: string;
+        verbal_multi_cue: boolean;
+        type: number;
+        time: number;
+        toll?: boolean;
+        ferry?: boolean;
+        rough?: boolean;
+        gate?: boolean;
+        roundabout_exit_count?: number;
+        street_names: string[];
+    }>;
+};
+export interface DirectionResponseError {
+    error_code: number;
+    error: string;
+    status_code: number;
+    status: string;
+}
+export interface DirectionResponseSuccess {
+    id: string;
+    trip: {
+        status: number;
+        status_message: number;
+        units: string;
+        language: string;
+        locations: Array<{
+            original_index: number;
+            type?: string;
+            side_of_street?: string;
+            lat: number;
+            lon: number;
+            heading?: number;
+        }>;
+        summary: {
+            max_lon: number;
+            max_lat: number;
+            time: number;
+            length: number;
+            min_lat: number;
+            min_lon: number;
+        };
+        legs: Legs[] | Legs;
+    };
+}
+export declare type DirectionsResponse = DirectionResponseSuccess | DirectionResponseError;
+declare type AutoOptions = {
+    auto: {
+        use_unpaved?: number;
+        use_highways?: number;
+        use_tolls?: number;
+        use_ferry?: number;
+        use_border_crossing?: number;
+    };
+};
+declare type TruckOptions = {
+    truck: {
+        max_weight?: number;
+        use_highways?: number;
+        use_unpaved?: number;
+        use_tolls?: number;
+        use_ferry?: number;
+        use_border_crossing?: number;
+    };
+};
+declare type PedestrianOptions = {
+    pedestrian: {
+        walking_speed?: number;
+        use_unpaved?: number;
+        use_ferry?: number;
+        use_roads?: number;
+        use_border_crossing?: number;
+    };
+};
+declare type BicycleOptions = {
+    bicycle: {
+        cycling_speed?: number;
+        use_unpaved?: number;
+        use_ferry?: number;
+        use_roads?: number;
+        use_border_crossing?: number;
+    };
+};
+declare type TaxiOptions = {
+    taxi: {
+        use_unpaved?: number;
+        use_highways?: number;
+        use_tolls?: number;
+        use_ferry?: number;
+        use_border_crossing?: number;
+    };
+};
+export declare type CostingOptions = AutoOptions | TruckOptions | PedestrianOptions | BicycleOptions | TaxiOptions;
+export interface ISOParams {
+    locations: Array<{
+        lat: number;
+        lon: number;
+    }>;
+    contours: Array<{
+        time: number;
+        color: string;
+    }>;
+    costing?: string;
+    id?: string;
+    costing_options?: CostingOptions;
+    units?: 'kilometers' | 'miles';
+    generalize?: number;
+    polygons?: boolean;
+    traffic?: boolean;
+}
+export interface ISOResponse {
+    id: string;
+    type: 'FeatureCollection';
+    features: Array<{
+        properties: {
+            'opacity': number;
+            'fill': string;
+            'fillOpacity': number;
+            'fill-opacity': number;
+            'fillColor': string;
+            'color': string;
+            'contour': number;
+        };
+        geometry: {
+            coordinates: Array<[number, number]>;
+            type: 'LineString' | 'Polygon';
+        };
+        type: 'Feature';
+    }>;
+}
+export declare type RequestParams = Record<string, any>;
+export declare type Endpoint = 'staticmap/png/' | 'search' | 'overall' | 'directions' | 'iso';
+export {};

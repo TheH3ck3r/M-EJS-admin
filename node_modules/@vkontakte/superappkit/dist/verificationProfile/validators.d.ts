@@ -1,0 +1,8 @@
+import { Validator } from "../validator";
+import { VerificationProfileInitConfig, VerificationProfileProviders } from './types';
+interface VerificationProfileConfigValidator {
+    config: VerificationProfileInitConfig;
+    provider: VerificationProfileProviders;
+}
+export declare const verificationProfileConfigValidator: Validator<VerificationProfileConfigValidator>;
+export {};

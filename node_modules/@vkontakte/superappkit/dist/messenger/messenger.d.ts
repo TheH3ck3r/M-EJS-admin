@@ -1,0 +1,32 @@
+import { MessengerInternalEvents } from './events';
+import { BridgeMessage } from "../common/bridge";
+import { MessengerConfig, MessengerInitConfig, MessengerParams } from "./types";
+import { CommonSDKEvents } from "../common/events";
+import { BaseModule } from "../baseModule/baseModule";
+export declare type Events = MessengerInternalEvents | CommonSDKEvents | string;
+/**
+ * Перед началом нужно настроить `SDK` через библиотеку `Config`.
+ *
+ * Пример использования:
+ * ```
+ * const messenger = new Messenger({
+ *   styles: {
+ *     bottom: '10px',
+ *     right: '10px',
+ *   }
+ * });
+ * messenger.open({ peer_id: -22822305 });
+ * ```
+ */
+export declare class Messenger extends BaseModule<MessengerInitConfig, MessengerConfig, MessengerParams> {
+    protected config: MessengerConfig;
+    protected cssText: string;
+    constructor(config: MessengerInitConfig);
+    protected handleBridgeMessage(data: BridgeMessage<Events>): void;
+    protected handleInternalIframeResize(data: BridgeMessage<Events>): void;
+    protected handleAfterUpdateConfig(): void;
+    protected handleAfterCreateIframe(): void;
+    protected validateParams(params: MessengerParams): Promise<MessengerParams>;
+    protected getIframeUrl(): Promise<string>;
+    protected updateStyles: () => void;
+}

@@ -1,0 +1,5 @@
+export declare enum AuthorizeEvents {
+    CLOSE = "VKSDKAuthorizeClose",
+    FAILED = "VKSDKAuthorizeFailed",
+    SUCCESS = "VKSDKAuthorizeSuccess"
+}

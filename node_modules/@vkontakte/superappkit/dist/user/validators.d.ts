@@ -1,0 +1,11 @@
+import { Validator } from "../validator";
+interface UserInitConfigValidator {
+    container: HTMLElement;
+}
+export declare const userInitConfigValidator: Validator<UserInitConfigValidator>;
+interface UserValidationPhoneParamsValidator {
+    canSkip: boolean;
+    origin: string;
+}
+export declare const userValidationPhoneParamsValidator: Validator<UserValidationPhoneParamsValidator>;
+export {};

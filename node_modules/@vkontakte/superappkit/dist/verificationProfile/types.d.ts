@@ -1,0 +1,21 @@
+export interface VerificationProfileConfig {
+    /**
+     * z-index для айфрейма процесса верификации
+     */
+    zIndex: number;
+    /**
+     * Цветовая тема модуля.
+     * Значение по умолчанию - "bright_light".
+     */
+    scheme: 'bright_light' | 'space_gray';
+    /**
+     * Выбор провайдера для верификации
+     * Обязательный параметр
+     */
+    provider: VerificationProfileProviders;
+}
+export declare type VerificationProfileProviders = 'esia' | 'tinkoff_id' | 'sber_id';
+export declare type VerificationProfileInitConfig = Partial<VerificationProfileConfig> & {
+    provider: VerificationProfileProviders;
+};
+export declare type VerificationProfileParams = Partial<VerificationProfileConfig>;

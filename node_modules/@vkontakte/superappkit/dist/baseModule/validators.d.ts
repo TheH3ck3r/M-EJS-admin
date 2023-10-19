@@ -1,0 +1,6 @@
+import { Validator } from "../validator";
+interface ParamsValidator {
+    params: any;
+}
+export declare const paramsValidator: Validator<ParamsValidator>;
+export {};

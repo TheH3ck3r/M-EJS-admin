@@ -1,0 +1,10 @@
+/**
+ * Библиотека валидатора параметров.
+ * ----------------------
+ * Позволяет провалидировать параметры по заданным правилам валидации.
+ *
+ * @module Validator
+ */
+export { isNumberOrStringHandler, isNegativeHandler, isNumberHandler, isRequiredHandler, isStringHandler, isFunctionHandler, } from './validationRuleHandlers';
+export { Validator } from './validator';
+export { onOffValidator, miniAppParamsValidator, messageRequirementValidator, tokenValidator, URLParamsValidator } from './validators';

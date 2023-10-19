@@ -1,0 +1,56 @@
+export declare enum ERROR_CODES {
+    UNKNOWN = 1,
+    MISSING_PARAM = 2,
+    CONNECTION_LOST = 3,
+    USER_DENIED = 4,
+    INVALID_PARAMS = 5,
+    CUSTOM = 6,
+    LOADING_ERROR = 7,
+    CONNECT_WINDOW_CLOSED = 7,
+    CONNECT_WINDOW_NOT_OPENED = 8,
+    CONNECT_DOMAIN_NOT_ALLOWED = 9,
+    CONNECT_UNKNOWN_SDK_MESSAGE = 10,
+    CONNECT_CLIENT_SDK_ERROR = 11,
+    VALIDATE_ERROR = 12,
+    CAPTCHA_ERROR = 14,
+    OLD_MISSING_PARAM = 100
+}
+interface CaptchaError {
+    error_code: ERROR_CODES.CAPTCHA_ERROR;
+    error_msg: string;
+    captcha_sid: string;
+    captcha_img: string;
+}
+interface WafError<T> {
+    error: T;
+}
+export declare type CaptchaWafError = WafError<CaptchaError>;
+export declare type ConnectAuthError = {
+    code: ERROR_CODES;
+    reason?: string;
+};
+export declare type CommonError = {
+    code: ERROR_CODES;
+    reason?: string;
+    data?: any;
+};
+export declare const CommonErrorReasons: {
+    wrongParam: (param: string, message?: string | undefined) => string;
+    connectWindowClosed: () => string;
+    connectWindowNotOpened: () => string;
+    domainNotAllowed: (domain: string) => string;
+    unknownSdkMessage: (message: string) => string;
+    clientSDKError: (error: {
+        error: string;
+        errorCode?: string | undefined;
+    }) => string;
+    loadingTimeout: () => string;
+    validationIsNumber: (param: string) => string;
+    validationIsString: (param: string) => string;
+    validationIsNegative: (param: string) => string;
+    validationIsRequired: (param: string) => string;
+    validationIsNumberOrString: (param: string) => string;
+    validationIsFunction: (param: string) => string;
+    validationDefault: () => string;
+};
+export {};

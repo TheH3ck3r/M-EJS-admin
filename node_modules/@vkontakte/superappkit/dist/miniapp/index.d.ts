@@ -1,0 +1,11 @@
+/**
+ * Библиотека мини-приложений.
+ * -------------------------
+ * Позволяет открывать мини-приложения вк.
+ *
+ * @module MiniApp
+ */
+export { MiniApp } from './miniApp';
+export { MiniAppEvents } from './events';
+export type { OpenMiniAppQuery, MiniAppLoadParams, CloseParams } from './types';
+export type { BridgeMessage as MiniAppMessage } from "../common/bridge";
